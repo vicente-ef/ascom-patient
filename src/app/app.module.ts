@@ -1,15 +1,25 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-import { AppComponent } from './app.component';
-import { PatientGridComponent } from './components/patient-grid/patient-grid.component';
-import { PatientDetailComponent } from './components/patient-detail/patient-detail.component';
-import { HttpClientModule } from '@angular/common/http';
+import {AppComponent} from './app.component';
+import {HttpClientModule} from '@angular/common/http';
+import {AppRoutingModule} from './app-routing.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {PatientModalComponent} from './components/patient-modal/patient-modal.component';
+import {PatientListComponent} from './components/patient-list/patient-list.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpClientModule ],
-  declarations: [ AppComponent, PatientGridComponent, PatientDetailComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule
+  ],
+  declarations: [AppComponent, PatientListComponent, PatientModalComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

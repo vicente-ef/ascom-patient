@@ -8,3 +8,11 @@ export interface Patient {
   sex: string;
   parameters: Parameter[];
 }
+
+
+export interface PatientUpdateRequest {
+  id: number;
+  familyName: string;
+  givenName: string;
+  sex: string;
+}

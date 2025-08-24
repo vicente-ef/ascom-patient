@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Patient} from '../models/patient';
-import {Observable, BehaviorSubject, throwError} from 'rxjs';
+import {Patient, PatientUpdateRequest} from '../models/patient';
+import {BehaviorSubject, Observable, throwError} from 'rxjs';
 import {catchError, finalize, take, tap} from 'rxjs/operators';
 
 @Injectable({
@@ -31,9 +31,6 @@ export class PatientService {
   constructor(private http: HttpClient) {
   }
 
-  /**
-   * Fetches all patients
-   */
   getPatients(): Observable<Patient[]> {
     this.clearError();
     this.loadingSubject.next(true);
@@ -48,10 +45,7 @@ export class PatientService {
       );
   }
 
-  /**
-   * Updates a patient's information
-   */
-  updatePatient(patient: Patient): Observable<any> {
+  updatePatient(patient: PatientUpdateRequest): Observable<any> {
     this.clearError();
     this.loadingSubject.next(true);
 
@@ -65,25 +59,16 @@ export class PatientService {
       );
   }
 
-  /**
-   * Refreshes the patients list
-   */
   refreshPatients(): void {
     this.getPatients()
       .pipe(take(1))
       .subscribe();
   }
 
-  /**
-   * Clears any existing error
-   */
   clearError(): void {
     this.errorSubject.next(null);
   }
 
-  /**
-   * Handles HTTP errors
-   */
   private handleError(error: any): Observable<never> {
     let errorMessage = 'An unexpected error occurred';
 

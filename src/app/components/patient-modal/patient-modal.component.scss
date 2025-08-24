@@ -1,0 +1,171 @@
+.modal {
+  z-index: 1050;
+
+  &.show {
+    display: block !important;
+  }
+}
+
+.modal-backdrop {
+  z-index: 1040;
+  opacity: 0.5;
+}
+
+.modal-dialog {
+  max-width: 800px;
+}
+
+.modal-content {
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  border-radius: 0.5rem 0.5rem 0 0;
+
+  .modal-title {
+    font-weight: 600;
+    color: #495057;
+  }
+}
+
+.modal-body {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.card {
+  border: 1px solid #e9ecef;
+  border-radius: 0.375rem;
+
+  .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.75rem 1rem;
+
+    .card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #495057;
+    }
+  }
+}
+
+.form-control-plaintext {
+  background-color: #f8f9fa !important;
+  border: 1px solid #e9ecef;
+  color: #495057;
+  font-weight: 500;
+}
+
+.form-label {
+  color: #6c757d;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+
+  &.fw-bold {
+    color: #495057;
+  }
+}
+
+.table {
+  font-size: 0.875rem;
+
+  th {
+    font-weight: 600;
+    color: #495057;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+  }
+
+  td {
+    vertical-align: middle;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .table-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+
+    &:hover {
+      background-color: rgba(220, 53, 69, 0.2);
+    }
+  }
+}
+
+.badge {
+  font-size: 0.75em;
+  padding: 0.35em 0.65em;
+
+  &.bg-light {
+    color: #495057 !important;
+    border: 1px solid #dee2e6;
+  }
+}
+
+code {
+  background-color: #f8f9fa;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.btn {
+  font-weight: 500;
+
+  &:disabled {
+    transform: none;
+  }
+}
+
+.spinner-border-sm {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.alert {
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.invalid-feedback {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.is-invalid {
+  border-color: #dc3545;
+
+  &:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 0.5rem;
+    max-width: none;
+  }
+
+  .modal-body {
+    max-height: 60vh;
+    padding: 1rem 0.75rem;
+  }
+
+  .card-body {
+    padding: 0.75rem;
+  }
+
+  .table-responsive {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    font-size: 0.875rem;
+    padding: 0.375rem 0.75rem;
+  }
+}
