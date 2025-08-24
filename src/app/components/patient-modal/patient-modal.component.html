@@ -26,7 +26,7 @@
                     <div class="card mb-4">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h6 class="card-title mb-0">
-                                <i class="bi bi-info-circle me-2"></i>Basic Information
+                                <i class="bi bi-info-circle me-2"></i>{{ 'patient.basicInfo' | translate }}
                             </h6>
                             <button
                                     type="button"
@@ -36,21 +36,21 @@
                                    [class.bi-pencil] ="!isEditing"
                                    [class.bi-eye] ="isEditing"
                                  ></i>
-                                {{ isEditing ? 'View' : 'Edit' }}
+                                {{ isEditing ? ('common.view' | translate) : ( 'common.edit' | translate ) }}
                             </button>
                         </div>
 
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label class="form-label fw-bold">Birth Date</label>
+                                    <label class="form-label fw-bold">{{ 'patient.birthDate' | translate }}</label>
                                     <div class="form-control-plaintext bg-light px-3 py-2 rounded">
                                         {{ formatBirthDate(patient.birthDate) }}
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 mb-3">
-                                    <label class="form-label fw-bold">Family Name</label>
+                                    <label class="form-label fw-bold">{{ 'patient.familyName' | translate }}</label>
                                     <input *ngIf="isEditing"
                                            type="text"
                                            class="form-control"
@@ -66,7 +66,7 @@
                                 </div>
 
                                 <div class="col-md-6 mb-3">
-                                    <label class="form-label fw-bold">Given Name</label>
+                                    <label class="form-label fw-bold">{{ 'patient.givenName' | translate }}</label>
                                     <input *ngIf="isEditing"
                                            type="text"
                                            class="form-control"
@@ -82,7 +82,7 @@
                                 </div>
 
                                 <div class="col-md-6 mb-3">
-                                    <label class="form-label fw-bold">Sex</label>
+                                    <label class="form-label fw-bold">{{ 'patient.sex' | translate }}</label>
                                     <select *ngIf="isEditing"
                                             class="form-select"
                                             [class.is-invalid]="hasFieldError('sex')"
@@ -92,7 +92,7 @@
                                         <option value="F">Female</option>
                                     </select>
                                     <div *ngIf="!isEditing" class="form-control-plaintext bg-light px-3 py-2 rounded">
-                                      {{ patient.sex === 'M' ? 'Male' : 'Female' }}
+                                      {{ patient.sex === 'M' ? ('sex.male' | translate) : ('sex.female' | translate) }}
                                     </div>
                                     <div *ngIf="hasFieldError('sex')" class="invalid-feedback">
                                         {{ getFieldError('sex') }}
@@ -107,7 +107,7 @@
                         <div class="card-header">
                             <h6 class="card-title mb-0">
                                 <i class="bi bi-list-ul me-2"></i>
-                                Parameters
+                                {{ 'patient.parameters' | translate }}
                                 <span class="badge bg-secondary ms-2">{{ patient.parameters.length }}</span>
                             </h6>
                         </div>
@@ -115,17 +115,17 @@
                         <div class="card-body p-0">
                             <div *ngIf="patient.parameters.length === 0" class="text-center py-4 text-muted">
                                 <i class="bi bi-inbox display-4 text-muted d-block mb-3"></i>
-                                No parameters available for this patient.
+                                {{ 'patient.noParameters' | translate }}
                             </div>
 
                             <div *ngIf="patient.parameters.length > 0" class="table-responsive">
                                 <table class="table table-sm table-hover mb-0">
                                     <thead class="table-light">
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Value</th>
-                                            <th class="text-center">Alarm Status</th>
+                                            <th>{{ 'parameter.id' | translate }}</th>
+                                            <th>{{ 'parameter.name' | translate }}</th>
+                                            <th>{{ 'parameter.value' | translate }}</th>
+                                            <th class="text-center">{{ 'parameter.alarmStatus' | translate }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -140,7 +140,7 @@
                                             </td>
                                             <td class="text-center">
                                                 <span *ngIf="parameter.alarm" class="badge bg-danger">
-                                                  <i class="bi bi-exclamation-triangle-fill me-1"></i>Alarm
+                                                  <i class="bi bi-exclamation-triangle-fill me-1"></i>{{ 'alarm.status' | translate }}
                                                 </span>
                                             </td>
                                         </tr>
@@ -160,7 +160,7 @@
                                 class="btn btn-secondary me-2"
                                 (click)="closeModal()"
                                 [disabled]="isSubmitting">
-                            Close
+                            {{ 'common.close' | translate }}
                         </button>
                     </div>
                     <div>
@@ -171,7 +171,7 @@
                                 [disabled]="isSubmitting || !patientForm.valid">
                             <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm me-2"></span>
                             <i *ngIf="!isSubmitting" class="bi bi-check-lg me-1"></i>
-                            {{ isSubmitting ? 'Saving...' : 'Save Changes' }}
+                            {{ isSubmitting ? ('common.saving' | translate) : ('common.save' | translate) }}
                         </button>
                     </div>
                 </div>
@@ -181,5 +181,4 @@
     </div>
 </div>
 
-<!-- Modal Backdrop -->
 <div *ngIf="show" class="modal-backdrop fade show"></div>

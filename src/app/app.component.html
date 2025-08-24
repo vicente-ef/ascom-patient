@@ -2,8 +2,31 @@
     <div class="container-fluid">
         <a class="navbar-brand fw-bold" href="#">
             <i class="bi bi-hospital me-2"></i>
-            {{ title }}
+            {{ 'app.title' | translate }}
         </a>
+
+        <div class="navbar-nav ms-auto d-flex flex-row align-items-center">
+            <div class="dropdown me-3">
+                <button class="btn btn-outline-light btn-sm dropdown-toggle d-flex align-items-center"
+                        type="button"
+                        id="languageDropdown"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                    <i class="bi bi-translate me-2"></i>
+                    {{ getCurrentLanguageName() }}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <li *ngFor="let lang of availableLanguages">
+                        <a class="dropdown-item d-flex align-items-center"
+                           (click)="changeLanguage(lang.code)"
+                           [class.active]="currentLanguage === lang.code">
+                            {{ lang.name }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 </nav>
 
@@ -16,7 +39,7 @@
         <div class="row align-items-center">
             <div class="col-md-6">
         <span class="text-muted small">
-          © 2025 Ascom
+          {{ 'footer.copyright' | translate }}
         </span>
             </div>
         </div>

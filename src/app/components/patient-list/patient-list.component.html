@@ -10,49 +10,49 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <h5 class="card-title mb-0">
-                            <i class="bi bi-funnel me-2"></i>Filters
+                            <i class="bi bi-funnel me-2"></i>{{ 'filters.title' | translate }}
                         </h5>
                     </div>
                     <div class="card-body">
                         <div class="row g-3">
                             <div class="col-md-3">
-                                <label class="form-label">Family Name</label>
+                                <label class="form-label">{{ 'patient.familyName' | translate }}</label>
                                 <input
                                         type="text"
                                         class="form-control"
                                         [(ngModel)]="filterForm.familyName"
                                         (input)="onFilterChange()"
-                                        placeholder="Enter family name">
+                                        placeholder="{{ 'patient.familyName.placeholder' | translate }}">
                             </div>
                             <div class="col-md-3">
-                                <label class="form-label">Given Name</label>
+                                <label class="form-label">{{ 'patient.givenName' | translate }}</label>
                                 <input
                                         type="text"
                                         class="form-control"
                                         [(ngModel)]="filterForm.givenName"
                                         (input)="onFilterChange()"
-                                        placeholder="Enter given name">
+                                        placeholder="{{ 'patient.givenName.placeholder' | translate }}">
                             </div>
                             <div class="col-md-2">
-                                <label class="form-label">Sex</label>
+                                <label class="form-label">{{ 'patient.sex' | translate }}</label>
                                 <select
                                         class="form-select"
                                         [(ngModel)]="filterForm.sex"
                                         (change)="onFilterChange()">
-                                    <option value="">All</option>
-                                    <option value="M">Male</option>
-                                    <option value="F">Female</option>
+                                    <option value="">{{ 'sex.select' | translate }}</option>
+                                    <option value="M">{{ 'sex.male' | translate }}</option>
+                                    <option value="F">{{ 'sex.female' | translate }}</option>
                                 </select>
                             </div>
                             <div class="col-md-2">
-                                <label class="form-label">Has Alarm</label>
+                                <label class="form-label">{{ 'filter.hasAlarm' | translate }}</label>
                                 <select
                                         class="form-select"
                                         [(ngModel)]="filterForm.hasAlarm"
                                         (change)="onFilterChange()">
-                                    <option [ngValue]="null">All</option>
-                                    <option [ngValue]="true">Yes</option>
-                                    <option [ngValue]="false">No</option>
+                                    <option [ngValue]="null">{{ 'filter.all' | translate }}</option>
+                                    <option [ngValue]="true">{{ 'common.yes' | translate }}</option>
+                                    <option [ngValue]="false">{{ 'common.no' | translate }}</option>
                                 </select>
                             </div>
                             <div class="col-md-2 d-flex align-items-end">
@@ -61,7 +61,7 @@
                                         class="btn btn-outline-secondary w-100"
                                         (click)="clearFilters()"
                                         [disabled]="!isFiltersApplied()">
-                                    <i class="bi bi-x-circle me-1"></i>Clear
+                                    <i class="bi bi-x-circle me-1"></i>{{ 'common.clear' | translate }}
                                 </button>
                             </div>
                         </div>
@@ -71,23 +71,23 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h5 class="card-title mb-0">
-                            <i class="bi bi-people me-2"></i>Patients List
+                            <i class="bi bi-people me-2"></i>{{ 'patients.list' | translate }}
                         </h5>
                         <button
                                 type="button"
                                 class="btn btn-primary btn-sm"
                                 (click)="loadPatients()"
                                 [disabled]="loading$ | async">
-                            <i class="bi bi-arrow-clockwise me-1"></i>Refresh
+                            <i class="bi bi-arrow-clockwise me-1"></i>{{ 'common.refresh' | translate }}
                         </button>
                     </div>
 
                     <div class="card-body p-0">
                         <div *ngIf="loading$ | async" class="text-center py-5">
                             <div class="spinner-border text-primary" role="status">
-                                <span class="visually-hidden">Loading...</span>
+                                <span class="visually-hidden">{{ 'common.loading' | translate }}</span>
                             </div>
-                            <p class="mt-2 text-muted">Loading patients...</p>
+                            <p class="mt-2 text-muted">{{ 'patients.loading' | translate }}</p>
                         </div>
 
                         <div *ngIf="!(loading$ | async)" class="table-responsive">
@@ -95,24 +95,24 @@
                                 <thead class="table-light sticky-top">
                                 <tr>
                                     <th scope="col" class="sortable" (click)="onSort('familyName')">
-                                        Family Name
+                                        {{ 'patient.familyName' | translate }}
                                         <i class="bi ms-1" [class]="getSortIcon('familyName')"></i>
                                     </th>
                                     <th scope="col" class="sortable" (click)="onSort('givenName')">
-                                        Given Name
+                                        {{ 'patient.givenName' | translate }}
                                         <i class="bi ms-1" [class]="getSortIcon('givenName')"></i>
                                     </th>
                                     <th scope="col" class="sortable" (click)="onSort('sex')">
-                                        Sex
+                                        {{ 'patient.givenName' | translate }}
                                         <i class="bi ms-1" [class]="getSortIcon('sex')"></i>
                                     </th>
                                     <th scope="col" class="sortable" (click)="onSort('birthDate')">
-                                        Birth Date
+                                        {{ 'patient.birthDate' | translate }}
                                         <i class="bi ms-1" [class]="getSortIcon('birthDate')"></i>
                                     </th>
-                                    <th scope="col">Parameters</th>
-                                    <th scope="col">Alarm Status</th>
-                                    <th scope="col" class="text-center">Actions</th>
+                                    <th scope="col">{{ 'patient.parameters' | translate }}</th>
+                                    <th scope="col">{{ 'patient.alarmStatus' | translate }}</th>
+                                    <th scope="col" class="text-center">{{ 'common.actions' | translate }}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -124,12 +124,12 @@
                                     <td>{{ formatBirthDate(patient.birthDate) }}</td>
                                     <td>
                                         <span class="badge bg-secondary">
-                                          {{ patient.parameters.length }} parameter(s)
+                                          {{ patient.parameters.length }} {{ 'patients.parameterCount' | translate }}
                                         </span>
                                     </td>
                                     <td>
                                         <span *ngIf="hasAlarmParameters(patient)" class="badge bg-danger">
-                                          <i class="bi bi-exclamation-triangle-fill me-1"></i>Alarm
+                                          <i class="bi bi-exclamation-triangle-fill me-1"></i>{{ 'alarm.status' | translate }}
                                         </span>
                                     </td>
                                     <td class="text-center">
@@ -137,20 +137,20 @@
                                                 type="button"
                                                 class="btn btn-outline-primary btn-sm"
                                                 (click)="openPatientDetail(patient)">
-                                            <i class="bi bi-eye me-1"></i>View
+                                            <i class="bi bi-eye me-1"></i>{{ 'common.view' | translate }}
                                         </button>
                                     </td>
                                 </tr>
                                 <tr *ngIf="!(error$ | async) && (patients$ | async)?.length === 0">
                                     <td colspan="7" class="text-center py-4 text-muted">
                                         <i class="bi bi-search display-1 text-muted d-block mb-3"></i>
-                                        No patients found matching your criteria.
+                                        {{ 'patients.noResults' | translate }}
                                     </td>
                                 </tr>
                                 <tr *ngIf="(error$ | async)">
                                     <td colspan="7" class="text-center py-4 text-muted">
                                         <i class="display-1 text-muted d-block mb-3"></i>
-                                        Unable to display data. Please try again later or contact support if the issue persists.
+                                        {{ 'patients.errorLoading' | translate }}
                                     </td>
                                 </tr>
                                 </tbody>
