@@ -18,7 +18,7 @@ export class AppComponent {
   ];
 
   constructor(private translate: TranslateService) {
-    this.handleUserLanguage(translate);
+    this.initUserLanguage(translate);
   }
 
   changeLanguage(langCode: string): void {
@@ -33,7 +33,7 @@ export class AppComponent {
     return language?.name ?? 'English';
   }
 
-  private handleUserLanguage(translate: TranslateService) {
+  private initUserLanguage(translate: TranslateService) {
     translate.setDefaultLang(LanguageCode.ENGLISH);
     const savedLanguage = localStorage.getItem(this.SELECTED_LANGUAGE_KEY);
 
