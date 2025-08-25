@@ -103,7 +103,7 @@
                                         <i class="bi ms-1" [class]="getSortIcon('givenName')"></i>
                                     </th>
                                     <th scope="col" class="sortable" (click)="onSort('sex')">
-                                        {{ 'patient.givenName' | translate }}
+                                        {{ 'patient.sex' | translate }}
                                         <i class="bi ms-1" [class]="getSortIcon('sex')"></i>
                                     </th>
                                     <th scope="col" class="sortable" (click)="onSort('birthDate')">
@@ -120,7 +120,7 @@
                                     class="patient-row">
                                     <td class="fw-medium">{{ patient.familyName }}</td>
                                     <td>{{ patient.givenName }}</td>
-                                    <td>{{ patient.sex === 'M' ? 'Male' : 'Female' }}</td>
+                                    <td>{{ patient.sex === 'M' ? ('sex.male' | translate) : ('sex.female' | translate) }}</td>
                                     <td>{{ formatBirthDate(patient.birthDate) }}</td>
                                     <td>
                                         <span class="badge bg-secondary">
