@@ -44,12 +44,16 @@ src/
 │   │   ├── patient-list/          # Main patient grid component
 │   │   └── patient-modal/         # Patient detail/edit modal
 │   ├── models/
-│   │   └── patient.model.ts       # TypeScript interfaces
+│   │   └── filter-config.ts       # Configuration model for filtering patient data
+│   │   └── parameter.ts           # Defines parameters for API requests or feature configurations
+│   │   └── patient.ts             # Patient model, representing the data structure of a patient
+│   │   └── sort-config .ts        # Configuration model for sorting patient data
+│   │   └── sort-direction.ts      # Enum or constants for defining sort directions (e.g., ASC/DESC)
 │   ├── services/
 │   │   └── patient.service.ts     # API communication service
 │   ├── app.component.*            # Root component
 │   ├── app.module.ts              # Main application module
 │   └── app-routing.module.ts      # Routing configuration
-├── styles.scss                   # Global styles
+├── styles.scss                    # Global styles
 └── index.html                     # Application entry point
 ```
