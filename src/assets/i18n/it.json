@@ -1,0 +1,89 @@
+{
+  "app": {
+    "title": "Sistema di Gestione Pazienti"
+  },
+  "language": {
+    "current": "Lingua",
+    "english": "Inglese",
+    "italian": "Italiano"
+  },
+  "footer": {
+    "copyright": "© 2025 Sistema di Gestione Pazienti - Soluzioni Sanitarie"
+  },
+  "patients": {
+    "title": "Gestione Pazienti",
+    "list": "Elenco Pazienti",
+    "loading": "Caricamento pazienti...",
+    "noResults": "Nessun paziente trovato che corrisponda ai tuoi criteri.",
+    "errorLoading" : "Impossibile visualizzare i dati. Riprova più tardi o contatta il supporto se il problema persiste.",
+    "parameterCount": "parametro/i"
+  },
+  "patient": {
+    "familyName": "Cognome",
+    "givenName": "Nome",
+    "birthDate": "Data di Nascita",
+    "birthDateAge": "Data di Nascita ed Età",
+    "sex": "Sesso",
+    "parameters": "Parametri",
+    "alarmStatus": "Stato Allarme",
+    "details": "Dettagli Paziente",
+    "basicInfo": "Informazioni di Base",
+    "noParameters": "Nessun parametro disponibile per questo paziente.",
+    "familyName.placeholder": "Inserisci cognome",
+    "givenName.placeholder": "Inserisci nome"
+  },
+  "parameter": {
+    "id": "ID",
+    "name": "Nome",
+    "value": "Valore",
+    "alarmStatus": "Stato Allarme"
+  },
+  "sex": {
+    "male": "Maschio",
+    "female": "Femmina",
+    "select": "Seleziona sesso"
+  },
+  "filters": {
+    "title": "Filtri"
+  },
+  "filter": {
+    "all": "Tutti",
+    "hasAlarm": "Ha allarmi?"
+  },
+  "alarm": {
+    "status": "Allarme"
+  },
+  "normal": {
+    "status": "Normale"
+  },
+  "common": {
+    "yes": "Sì",
+    "no": "No",
+    "clear": "Cancella",
+    "refresh": "Aggiorna",
+    "loading": "Caricamento...",
+    "actions": "Azioni",
+    "view": "Visualizza",
+    "edit": "Modifica",
+    "save": "Salva Modifiche",
+    "cancel": "Annulla",
+    "close": "Chiudi",
+    "saving": "Salvataggio..."
+  },
+  "validation": {
+    "required": "{{field}} è obbligatorio",
+    "minlength": "{{field}} deve essere di almeno {{requiredLength}} caratteri",
+    "maxlength" : "{{field}} non può superare {{requiredLength}} caratteri",
+    "familyName": "Cognome",
+    "givenName": "Nome",
+    "sex": "Sesso"
+  },
+  "errors": {
+    "updateFailed": "Aggiornamento paziente fallito",
+    "loadFailed": "Caricamento pazienti fallito",
+    "authFailed": "Autenticazione fallita. Controlla le tue credenziali.",
+    "notFound": "La risorsa richiesta non è stata trovata.",
+    "serverError": "Errore interno del server. Riprova più tardi.",
+    "unexpected": "Si è verificato un errore imprevisto"
+  }
+}

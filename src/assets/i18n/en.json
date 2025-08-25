@@ -1,0 +1,85 @@
+{
+  "app": {
+    "title": "Patient Management System"
+  },
+  "language": {
+    "current": "Language",
+    "english": "English",
+    "italian": "Italian"
+  },
+  "footer": {
+    "copyright": "© 2025 Patient Management System - Healthcare Solutions"
+  },
+  "patients": {
+    "title": "Patient Management",
+    "list": "Patients List",
+    "loading": "Loading patients...",
+    "noResults": "No patients found matching your criteria.",
+    "errorLoading": "Unable to display data. Please try again later or contact support if the issue persists.",
+    "parameterCount": "parameter(s)"
+  },
+  "patient": {
+    "familyName": "Family Name",
+    "givenName": "Given Name",
+    "birthDate": "Birth Date",
+    "sex": "Sex",
+    "parameters": "Parameters",
+    "alarmStatus": "Alarm Status",
+    "details": "Patient Details",
+    "basicInfo": "Basic Information",
+    "noParameters": "No parameters available for this patient.",
+    "familyName.placeholder": "Enter family name",
+    "givenName.placeholder": "Enter given name"
+  },
+  "parameter": {
+    "id": "ID",
+    "name": "Name",
+    "value": "Value",
+    "alarmStatus": "Alarm Status"
+  },
+  "sex": {
+    "male": "Male",
+    "female": "Female",
+    "select": "Select sex"
+  },
+  "filters": {
+    "title": "Filters"
+  },
+  "filter": {
+    "all": "All",
+    "hasAlarm": "Has Alarm"
+  },
+  "alarm": {
+    "status": "Alarm"
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "clear": "Clear",
+    "refresh": "Refresh",
+    "loading": "Loading...",
+    "actions": "Actions",
+    "view": "View",
+    "edit": "Edit",
+    "save": "Save Changes",
+    "cancel": "Cancel",
+    "close": "Close",
+    "saving": "Saving..."
+  },
+  "validation": {
+    "required": "{{field}} is required",
+    "minlength": "{{field}} must be at least {{requiredLength}} characters",
+    "maxlength" : "{{field}} cannot exceed {{requiredLength}} characters",
+    "familyName": "Family Name",
+    "givenName": "Given Name",
+    "sex": "Sex"
+  },
+  "errors": {
+    "updateFailed": "Failed to update patient",
+    "loadFailed": "Failed to load patients",
+    "authFailed": "Authentication failed. Please check your credentials.",
+    "notFound": "The requested resource was not found.",
+    "serverError": "Internal server error. Please try again later.",
+    "unexpected": "An unexpected error occurred"
+  }
+}
