@@ -6,6 +6,7 @@ Angular 15 application for managing patient data with filtering, sorting, and ed
 
 ### Prerequisites
 - Node.js 16+ (16.13.2)
+- Angular CLI 15+
 - npm or yarn
 
 ### Installation
